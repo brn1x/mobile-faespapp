@@ -23,7 +23,24 @@ public class Group {
         this.objGrupo = objGrupo;
         this.situacao = situacao;
 
-        this.icon = R.drawable.icongroup;
+        if(tpGrupo.equals("entretenimento") || tpGrupo.equals("Entretenimento")){
+            this.icon = R.drawable.entretenimento;
+        }
+        else if( tpGrupo.equals("esporte") || tpGrupo.equals("Esporte")){
+            this.icon = R.drawable.esporte;
+        }
+        else if( tpGrupo.equals("Religioso") || tpGrupo.equals("Religioso")){
+            this.icon = R.drawable.religioso;
+        }
+        else if( tpGrupo.equals("videogame") || tpGrupo.equals("Videogame")){
+            this.icon = R.drawable.jogos;
+        }
+        else if( tpGrupo.equals("estudo") || tpGrupo.equals("Estudo")){
+            this.icon = R.drawable.estudo;
+        }
+        else {
+            this.icon = R.drawable.icongroup;
+        }
     }
 
     public Integer getId() {

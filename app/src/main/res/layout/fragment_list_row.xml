@@ -10,7 +10,7 @@
         android:id="@+id/group_icon"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:src="@drawable/icongroup">
+        >
     </ImageView>
 
     <LinearLayout

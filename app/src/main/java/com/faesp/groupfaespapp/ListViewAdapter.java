@@ -85,6 +85,7 @@ public class ListViewAdapter extends BaseAdapter {
                 intent.putExtra("descGroupDesc", modelList.get(position).getDescGrupo());
                 intent.putExtra("descObjGroup", modelList.get(position).getObjGrupo());
                 intent.putExtra("descSituacao", modelList.get(position).getSituacao());
+                intent.putExtra("descIcon", modelList.get(position).getIcon());
                 mContext.startActivity(intent);
             }
         });

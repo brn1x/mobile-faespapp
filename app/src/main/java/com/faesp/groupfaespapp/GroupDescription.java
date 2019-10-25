@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -31,6 +32,7 @@ public class GroupDescription extends AppCompatActivity {
         TextView groupName = findViewById(R.id.desc_groupName);
         TextView groupDesc = findViewById(R.id.desc_groupDesc);
         TextView groupQtdAlunos = findViewById(R.id.qtdAlunos);
+        ImageView groupIcon = findViewById(R.id.desc_group_icon);
         Button cadastrarBtn = findViewById(R.id.cadastrarBtn);
 
         // getting data from the main page
@@ -45,6 +47,7 @@ public class GroupDescription extends AppCompatActivity {
         String desc_GroupDesc =  intent.getStringExtra("descGroupDesc");
         String desc_objGroup = intent.getStringExtra("descObjGroup");
         String desc_situacao = intent.getStringExtra("descSituacao");
+        Integer desc_IconGroup = intent.getIntExtra("descIcon", R.drawable.icongroup);
 
 //        Gson gson = new Gson();
 //        Group descGroup = new Group(desc_id, desc_GroupName, desc_qtdMinP, desc_qtdMaxP, desc_qtdEnc, desc_GroupType, desc_GroupDesc, desc_objGroup, desc_situacao);
@@ -68,6 +71,7 @@ public class GroupDescription extends AppCompatActivity {
         groupName.setText(desc_GroupName);
         groupDesc.setText(desc_GroupDesc);
         groupQtdAlunos.setText(""+desc_qtdMaxP);
+        groupIcon.setImageResource(desc_IconGroup);
 
 
         Group gr = new Group(desc_id, desc_GroupName, desc_qtdMinP, desc_qtdMaxP, desc_qtdEnc, desc_GroupType, desc_GroupDesc, desc_objGroup, desc_situacao);

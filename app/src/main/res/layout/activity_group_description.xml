@@ -19,8 +19,7 @@
             <ImageView
                 android:id="@+id/desc_group_icon"
                 android:layout_width="300dp"
-                android:layout_height="300dp"
-                android:src="@drawable/icongroup">
+                android:layout_height="300dp">
             </ImageView>
             <TextView
                 android:id="@+id/desc_groupType"
