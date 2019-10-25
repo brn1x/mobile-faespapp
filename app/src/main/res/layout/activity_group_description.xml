@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".GroupDescription">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/desc_group_icon"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:src="@drawable/icongroup">
+            </ImageView>
+            <TextView
+                android:id="@+id/desc_groupType"
+                android:text="Tipo Grupo"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="20sp"/>
+            <TextView
+                android:id="@+id/desc_groupName"
+                android:text="Nome Grupo"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="30sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/desc_groupDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:scrollbarSize="@android:dimen/app_icon_size"
+                android:text="Aqui fica a descrição do grupo com bastante texto escrito, para que ele se adapte e fique bem grandes mesmo,
+        assim a gente pode ver como que ficaria se o texto ficasse bem grande, que é o caso aqui, porque o texto está bem grande mesmo!"
+                android:textAlignment="center"
+                android:textColor="#000"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/qtdAlunos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="9/10"
+                android:textAlignment="center"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                />
+
+            <Button
+                android:id="@+id/cadastrarBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cadastrar"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:padding="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                />
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

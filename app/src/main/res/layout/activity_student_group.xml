@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".GroupDescription">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15sp"
+        android:text="Seus Grupos"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="15dp"
+        ></TextView>
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="400dp">
+    </ListView>
+
+    <Button
+        android:id="@+id/listagroupsBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:text="Listar Todos Grupos"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        android:padding="15dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="15dp" />
+
+
+
+</LinearLayout>
