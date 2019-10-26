@@ -43,7 +43,7 @@ public class GroupApi {
     }
 
 	// Faz o request para a API
-    private static String request(String stringUrl) {
+    public static String request(String stringUrl) {
         URL url = null;
         HttpURLConnection urlConnection = null;
 
@@ -56,7 +56,6 @@ public class GroupApi {
             url = new URL(stringUrl);
             urlConnection = (HttpURLConnection) url.openConnection();
             InputStream in = new BufferedInputStream(urlConnection.getInputStream());
-            System.out.println(urlConnection.getResponseCode());
             return readStream(in);
         }catch (Exception e){
             e.printStackTrace();
@@ -80,7 +79,6 @@ public class GroupApi {
 
         int responseCode = urlConnection.getResponseCode();
 
-        System.out.println(responseCode);
         if (responseCode == HttpURLConnection.HTTP_OK) { //success
             BufferedReader in = new BufferedReader(new InputStreamReader(
                     urlConnection.getInputStream()));
@@ -89,8 +87,6 @@ public class GroupApi {
             while ((inputLine = in .readLine()) != null) {
                 response.append(inputLine);
             } in .close();
-
-            System.out.println(response.toString());
         } else {
             System.out.println("POST NOT WORKED");
         }

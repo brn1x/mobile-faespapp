@@ -9,10 +9,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+
+import org.json.JSONException;
 
 import java.io.IOException;
 
@@ -35,6 +38,8 @@ public class GroupDescription extends AppCompatActivity {
         ImageView groupIcon = findViewById(R.id.desc_group_icon);
         Button cadastrarBtn = findViewById(R.id.cadastrarBtn);
 
+        View btn = findViewById(R.id.cadastrarBtn);
+
         // getting data from the main page
         Intent intent = getIntent();
         String desc_PageName = intent.getStringExtra("actionBarTitle");
@@ -49,12 +54,16 @@ public class GroupDescription extends AppCompatActivity {
         String desc_situacao = intent.getStringExtra("descSituacao");
         Integer desc_IconGroup = intent.getIntExtra("descIcon", R.drawable.icongroup);
 
-//        Gson gson = new Gson();
-//        Group descGroup = new Group(desc_id, desc_GroupName, desc_qtdMinP, desc_qtdMaxP, desc_qtdEnc, desc_GroupType, desc_GroupDesc, desc_objGroup, desc_situacao);
-//        final String groupJson = gson.toJson(descGroup);
+        /* verify the quantity of students registered in this group */
+        String qttStuddent = GroupApi.request("https://node-group-api.herokuapp.com/groups/"+ desc_id +"/studentqtt");
+
+        /* verify is the student is already registered in this group */
+        String isRegistered = GroupApi.request("https://node-group-api.herokuapp.com/groups/"+ desc_id +"/student/"+raAluno).trim();
+        if(isRegistered.equals("1")){
+            btn.setVisibility(View.GONE);
+        }
 
         cadastrarBtn.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 try {
@@ -70,7 +79,7 @@ public class GroupDescription extends AppCompatActivity {
         groupType.setText(desc_GroupType);
         groupName.setText(desc_GroupName);
         groupDesc.setText(desc_GroupDesc);
-        groupQtdAlunos.setText(""+desc_qtdMaxP);
+        groupQtdAlunos.setText(qttStuddent.trim()+" / "+desc_qtdMaxP);
         groupIcon.setImageResource(desc_IconGroup);
 
 
